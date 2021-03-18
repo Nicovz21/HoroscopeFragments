@@ -12,9 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ShareActionProvider;
+import androidx.core.view.MenuItemCompat;
 
 public class HoroscopeFactActivity extends AppCompatActivity {
-
+    private ShareActionProvider provider;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -35,6 +37,9 @@ public class HoroscopeFactActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
+        //add provider again to share this screen
+        MenuItem searchItem = menu.findItem(R.id.app_bar_search);
+        provider = (ShareActionProvider) MenuItemCompat.getActionProvider((MenuItem) menu.findItem(R.id.share));
         return super.onCreateOptionsMenu(menu);
     }
     @Override
@@ -52,6 +57,12 @@ public class HoroscopeFactActivity extends AppCompatActivity {
                 //Send user to color changer screen
                 setMyScreenColor(Color.RED);
                 //add popup to display info about me and this app
+                break;
+            case R.id.share:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "This is a message for you");
+                provider.setShareIntent(intent);
                 break;
 
             default:

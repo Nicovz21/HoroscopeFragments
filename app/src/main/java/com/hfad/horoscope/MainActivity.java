@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 if (userSelect) {
                     final String horoscope = (String) parent.getItemAtPosition(position);
                     Log.i("onItemSelected :sign", horoscope);
-                    
+
                     new FetchHoroscopeFact().execute(horoscope);
                     userSelect = false;
                 }
