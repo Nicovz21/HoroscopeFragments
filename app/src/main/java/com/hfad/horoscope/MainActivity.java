@@ -19,6 +19,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SearchView;
 import androidx.appcompat.widget.ShareActionProvider;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         provider = (ShareActionProvider) MenuItemCompat.getActionProvider((MenuItem) menu.findItem(R.id.share));
         return super.onCreateOptionsMenu(menu);
     }
+  
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
