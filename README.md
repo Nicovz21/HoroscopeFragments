@@ -1,0 +1,2 @@
+# HoroscopeFragments
+FragmentedVersionOfHoroscopeApp
