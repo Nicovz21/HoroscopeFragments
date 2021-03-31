@@ -1,19 +1,24 @@
 package com.hfad.horoscope;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HoroscopeListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HoroscopeListFragment extends Fragment {
+public class HoroscopeListFragment extends ListFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +28,7 @@ public class HoroscopeListFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private MainActivity mActivity;
 
     public HoroscopeListFragment() {
         // Required empty public constructor
@@ -47,6 +53,18 @@ public class HoroscopeListFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mActivity = (MainActivity) context;
+    }
+
+    @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        mActivity.setHoroscopeOnClick(position);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -58,7 +76,7 @@ public class HoroscopeListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_horoscope_list, container, false);
+
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 }

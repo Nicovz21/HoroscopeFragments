@@ -126,7 +126,14 @@ public void onUserInteraction() {
     userSelect = true;
 
 }
-//associate needed fact with sign picked, and use buffered reader to grab the needed text.
+
+    public void setHoroscopeOnClick(int position) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("StarSign", position);
+        startActivity(intent);
+    }
+
+    //associate needed fact with sign picked, and use buffered reader to grab the needed text.
     //This class also establishes the connection to the url and all properties needed for the API
     class FetchHoroscopeFact extends AsyncTask<String ,Void,String> {
         @Override
