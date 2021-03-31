@@ -24,7 +24,7 @@
         android:name="com.hfad.horoscope.HoroscopeListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/listview_layout" />
+        tools:layout="@layout/activity_horoscope_fact" />
 
     <TextView
         android:layout_width="297dp"

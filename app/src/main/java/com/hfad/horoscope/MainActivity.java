@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.listview_layout);
 //create spinner
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
@@ -128,7 +128,7 @@ public void onUserInteraction() {
 }
 
     public void setHoroscopeOnClick(int position) {
-        Intent intent = new Intent(this, DetailActivity.class);
+        Intent intent = new Intent(this, HoroscopeFactActivity.class);
         intent.putExtra("StarSign", position);
         startActivity(intent);
     }

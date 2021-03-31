@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Horoscope">
-        <activity android:name=".DetailActivity"></activity>
         <activity
             android:name=".HelpScreen"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".HoroscopeFactActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.hfad.horoscope.HoroscopeDetail"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -7,6 +7,14 @@
     tools:context=".MainActivity">
 
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.hfad.horoscope.HoroscopeListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        tools:layout="@layout/listview_layout" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -19,20 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.hfad.horoscope.HoroscopeListFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/listview_layout" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

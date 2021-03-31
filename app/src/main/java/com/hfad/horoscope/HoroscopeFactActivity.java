@@ -6,26 +6,53 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ShareActionProvider;
 import androidx.core.view.MenuItemCompat;
 
 public class HoroscopeFactActivity extends AppCompatActivity {
+
+  private String starSignFact = "";
+//    private HoroscopeHandler handler;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.horoscope_detail);
+//
+//        String starSignFact = (String) getIntent().getExtras().get("horoscopeFact");
+//         //= getIntent().getExtras().getString("starSignFact");
+//        HoroscopeDetail frag = (HoroscopeDetail) getSupportFragmentManager().findFragmentById(R.id.fragment_horoscope_detail);
+//        frag.setHoroscopeFact(starSignFact);
+//    }
+
+
+
+
+
+
+
+
     private ShareActionProvider provider;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         //set content view
         setContentView(R.layout.activity_horoscope_fact);
+
+        String starSignFact = (String) getIntent().getExtras().get("horoscopeFact");
+//         //= getIntent().getExtras().getString("starSignFact");
+        HoroscopeDetail frag = (HoroscopeDetail) getSupportFragmentManager().findFragmentById(R.id.fragment_horoscope_detail);
+        frag.setHoroscopeFact(starSignFact);
         //set text from last screen to this one using intents
-        String fact = (String) getIntent().getExtras().get("horoscopeFact");
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(fact);
+//        String fact = (String) getIntent().getExtras().get("horoscopeFact");
+//        TextView textView = (TextView) findViewById(R.id.textView);
+//        textView.setText(fact);
 //add toolbar to second screen
         setSupportActionBar(findViewById(R.id.toolbar));
         ActionBar actionBar = getSupportActionBar();
@@ -39,7 +66,7 @@ public class HoroscopeFactActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu,menu);
         //add provider again to share this screen
         MenuItem searchItem = menu.findItem(R.id.app_bar_search);
-        provider = (ShareActionProvider) MenuItemCompat.getActionProvider((MenuItem) menu.findItem(R.id.share));
+        //provider = (ShareActionProvider) MenuItemCompat.getActionProvider((MenuItem) menu.findItem(R.id.share));
         return super.onCreateOptionsMenu(menu);
     }
     @Override
