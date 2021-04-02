@@ -15,11 +15,9 @@
             android:name=".HelpScreen"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".HoroscopeFactActivity"
+            android:name=".DetailActivity"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.hfad.horoscope.HoroscopeDetail"
-            android:parentActivityName=".MainActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

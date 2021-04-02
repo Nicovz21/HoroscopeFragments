@@ -3,56 +3,36 @@ package com.hfad.horoscope;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ShareActionProvider;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.FragmentTransaction;
 
-public class HoroscopeFactActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
-  private String starSignFact = "";
-//    private HoroscopeHandler handler;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.horoscope_detail);
-//
-//        String starSignFact = (String) getIntent().getExtras().get("horoscopeFact");
-//         //= getIntent().getExtras().getString("starSignFact");
-//        HoroscopeDetail frag = (HoroscopeDetail) getSupportFragmentManager().findFragmentById(R.id.fragment_horoscope_detail);
-//        frag.setHoroscopeFact(starSignFact);
-//    }
-
-
-
-
-
-
-
-
-    private ShareActionProvider provider;
+  private String starSignFact = "hello";
+  private ShareActionProvider provider;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         //set content view
-        setContentView(R.layout.activity_horoscope_fact);
-
+        setContentView(R.layout.activity_detail);
+        Log.i("moveScreens", "Now on second screen");
+        //make the string to go into the fragment
         String starSignFact = (String) getIntent().getExtras().get("horoscopeFact");
-//         //= getIntent().getExtras().getString("starSignFact");
-        HoroscopeDetail frag = (HoroscopeDetail) getSupportFragmentManager().findFragmentById(R.id.fragment_horoscope_detail);
+        System.out.println(starSignFact);
+        //get fragment
+        HoroscopeDetail frag = (HoroscopeDetail) getSupportFragmentManager().findFragmentById(R.id.fragment);
+        //Add the string to fragment
         frag.setHoroscopeFact(starSignFact);
-        //set text from last screen to this one using intents
-//        String fact = (String) getIntent().getExtras().get("horoscopeFact");
-//        TextView textView = (TextView) findViewById(R.id.textView);
-//        textView.setText(fact);
+
 //add toolbar to second screen
         setSupportActionBar(findViewById(R.id.toolbar));
         ActionBar actionBar = getSupportActionBar();

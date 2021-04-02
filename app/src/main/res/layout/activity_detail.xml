@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
     <fragment
         android:id="@+id/fragment"
-        android:name="com.hfad.horoscope.HoroscopeListFragment"
+        android:name="com.hfad.horoscope.HoroscopeDetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
-        tools:layout="@layout/fragment_horoscope_list" />
+        tools:layout="@layout/fragment_horoscope_detail" />
     //add toolbar
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

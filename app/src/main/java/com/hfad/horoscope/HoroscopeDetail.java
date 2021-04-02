@@ -24,7 +24,7 @@ public class HoroscopeDetail extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.horoscope_detail, container, false);
+        return inflater.inflate(R.layout.fragment_horoscope_detail, container, false);
     }
     public void setHoroscopeFact(String starSignFact) {
         this.starSignFact= starSignFact;
@@ -35,7 +35,7 @@ public class HoroscopeDetail extends Fragment {
         super.onStart();
         View view = getView();
         if(view != null && starSignFact != ""){
-            TextView horoscopeFactView = (TextView) view.findViewById(R.id.textView);
+            TextView horoscopeFactView = (TextView) view.findViewById(R.id.textView_fragment);
             horoscopeFactView.setText(starSignFact);
             Log.i("textWentThrough", "fragmented");
          //   starSignFact.setText(HoroscopeHandler.horoscopes[starSignId]);
