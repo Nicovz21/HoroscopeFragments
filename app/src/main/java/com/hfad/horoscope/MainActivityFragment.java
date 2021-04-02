@@ -171,12 +171,12 @@ public interface MainActivityListenser{
             //for when a sign is selected, fetch the text associated
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (myActivity.userSelect) {
+
                     final String horoscope = (String) parent.getItemAtPosition(position);
                     Log.i("onItemSelected :sign", horoscope);
 
                     new FetchHoroscopeFact().execute(horoscope);
-                    myActivity.userSelect = false;
+                    //myActivity.userSelect = false;
                // }
             }
             //if nothing is selected then do nothing
@@ -191,4 +191,4 @@ public interface MainActivityListenser{
 
 
     }
-}
+    }
